@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+Route::get('/ispod', function () {
+    return view('ispod.welcome');
+})->name('ruta_ispod');

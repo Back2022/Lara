@@ -18,4 +18,10 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+        public function test_the_application_returns_an_error_no_page_ananas()
+    {
+        $response = $this->get('/ananas');
+
+        $response->assertStatus(404);
+    }
 }
