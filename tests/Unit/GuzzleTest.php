@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use \GuzzleHttp\Client;
 
+
 class GuzzleTest extends TestCase {
 
     /**
@@ -24,10 +25,11 @@ class GuzzleTest extends TestCase {
     }
         public function testDohvatiStranicuGreeting() {
         $client = new \GuzzleHttp\Client();
-        $res = $client->request('GET', 'http://localhost:8000/greeting?pozdrav=hello');
+        $res = $client->request('GET', 'http://localhost:8000/greeting?pozdrav=hello',['query'=>['foo'=>'bar']]);
         $this->assertEquals('200', $res->getStatusCode());
         $this->assertEquals('text/html; charset=UTF-8', $res->getHeader('content-type')[0]);
-        
+       // $res->getStatusCode();
+        //$res->
         //var_dump($res->getHeaders());
         //var_dump($res);
         
