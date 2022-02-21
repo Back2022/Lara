@@ -29,8 +29,55 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
+Korisnik@CR13-02 MINGW64 ***~/Code/Lara (main)***
+***$ git commit -am "breeze install https://laravel.com/docs/9.x/starter-kits"***
+[main 22235ab] breeze install https://laravel.com/docs/9.x/starter-kits
+``` 55 files changed, 26392 insertions(+), 23 deletions(-)
+ create mode 100644 app/Http/Controllers/Auth/AuthenticatedSessionController.php
+ create mode 100644 app/Http/Controllers/Auth/ConfirmablePasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/EmailVerificationNotificationController.php
+ create mode 100644 app/Http/Controllers/Auth/EmailVerificationPromptController.php
+ create mode 100644 app/Http/Controllers/Auth/NewPasswordController.php
+ create mode 100644 app/Http/Controllers/Auth/PasswordResetLinkController.php
+ create mode 100644 app/Http/Controllers/Auth/RegisteredUserController.php
+ create mode 100644 app/Http/Controllers/Auth/VerifyEmailController.php
+ create mode 100644 app/Http/Requests/Auth/LoginRequest.php
+ create mode 100644 app/Models/Photo.php
+ create mode 100644 app/View/Components/AppLayout.php
+ create mode 100644 app/View/Components/GuestLayout.php
+ create mode 100644 database/migrations/2022_02_16_184318_create_froots.php
+ rewrite public/js/app.js (91%)
+ create mode 100644 resources/views/auth/confirm-password.blade.php
+ create mode 100644 resources/views/auth/forgot-password.blade.php
+ create mode 100644 resources/views/auth/login.blade.php
+ create mode 100644 resources/views/auth/register.blade.php
+ create mode 100644 resources/views/auth/reset-password.blade.php
+ create mode 100644 resources/views/auth/verify-email.blade.php
+ create mode 100644 resources/views/components/application-logo.blade.php
+ create mode 100644 resources/views/components/auth-card.blade.php
+ create mode 100644 resources/views/components/auth-session-status.blade.php
+ create mode 100644 resources/views/components/auth-validation-errors.blade.php
+ create mode 100644 resources/views/components/button.blade.php
+ create mode 100644 resources/views/components/dropdown-link.blade.php
+ create mode 100644 resources/views/components/dropdown.blade.php
+ create mode 100644 resources/views/components/input.blade.php
+ create mode 100644 resources/views/components/label.blade.php
+ create mode 100644 resources/views/components/nav-link.blade.php
+ create mode 100644 resources/views/components/responsive-nav-link.blade.php
+ create mode 100644 resources/views/dashboard.blade.php
+ create mode 100644 resources/views/layouts/app.blade.php
+ create mode 100644 resources/views/layouts/guest.blade.php
+ create mode 100644 resources/views/layouts/navigation.blade.php
+ create mode 100644 routes/auth.php
+ create mode 100644 routes/web_old.php
+ create mode 100644 tailwind.config.js
+ create mode 100644 tests/Feature/Auth/AuthenticationTest.php
+ create mode 100644 tests/Feature/Auth/EmailVerificationTest.php
+ create mode 100644 tests/Feature/Auth/PasswordConfirmationTest.php
+ create mode 100644 tests/Feature/Auth/PasswordResetTest.php
+ create mode 100644 tests/Feature/Auth/RegistrationTest.php
+```
+ 
 ### Premium Partners
 
 - **[Vehikl](https://vehikl.com/)**
