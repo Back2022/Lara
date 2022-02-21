@@ -24,8 +24,8 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## Learavel Eloquent generatori
 
-Eloquent BLUEPRINT generator: [generator](https://laravelarticle.com/laravel-migration-generator-online)
-Eloquent SEEDER generator: [generator] (http://laravel.stonelab.ch/sql-seeder-converter/)
+Eloquent BLUEPRINT generator: [generator](https://laravelarticle.com/laravel-migration-generator-online).  
+Eloquent SEEDER generator: [generator](http://laravel.stonelab.ch/sql-seeder-converter/)
 
 ## Laravel Breeze instalacija
 ```
