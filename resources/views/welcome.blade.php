@@ -60,9 +60,10 @@
                                     <li>This is link <a href="{{ $link }}">{{ $link }}</a></li>
                                     @endforeach
                                     </ol>
-                                  
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
+                                  USERNAME: pmrvic@789.com
+                                  PASS: 12345678
+
+      </div>
                             </div>
                         </div>
 

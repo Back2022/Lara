@@ -3,6 +3,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,20 @@ use App\Http\Controllers\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/// DB Primjer raw SQL ///
 
+    Route::get('/dbrawlist', 
+            [App\Http\Controllers\DBController::class, 'index'])
+            ->name('db_raw_list_all_users');  
+
+
+/////////////////
+Route::get('/request_primjer', function (Request $req) {
+    dd($req);
+})->name('request.primjer');
+
+
+/////////////////
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -117,7 +132,6 @@ Route::get('/user3', 'App\Http\Controllers\UserController@index');
 //
 //
 // prikazi primjer dependency injection
-use Illuminate\Http\Request;
 Route::get('/showrequest',function(Request $req){
     foreach ($req->query->all() as $key => $value) {
         echo "$key=$value<br>";
