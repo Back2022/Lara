@@ -1,4 +1,5 @@
 <?php
+//https://laravelarticle.com/laravel-migration-generator-online
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

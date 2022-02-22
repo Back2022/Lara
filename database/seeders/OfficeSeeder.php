@@ -1,4 +1,5 @@
 <?php
+//http://laravel.stonelab.ch/sql-seeder-converter/
 
 namespace Database\Seeders;
 

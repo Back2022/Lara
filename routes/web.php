@@ -16,6 +16,8 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('Office', \App\Http\Controllers\OfficeController::class);
 /// DB Primjer raw SQL ///
 
     Route::get('/dbrawlist', 

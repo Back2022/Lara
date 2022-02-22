@@ -15,7 +15,9 @@ class OfficeController extends Controller
      */
     public function index()
     {
-        //
+        return view('Office.index', [
+            'Offices' => Office::all()
+        ]);
     }
 
     /**
@@ -45,9 +47,13 @@ class OfficeController extends Controller
      * @param  \App\Models\Office  $office
      * @return \Illuminate\Http\Response
      */
-    public function show(Office $office)
+  //  public function show(Office $office) //nije proslo
+   public function show($id)
     {
-        //
+        return view('Office.show', [
+          'office' => Office::findOrFail($id)
+          //  'office' =>$office  //nije proslo
+        ]);
     }
 
     /**

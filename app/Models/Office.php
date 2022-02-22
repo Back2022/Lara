@@ -8,4 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Office extends Model
 {
     use HasFactory;
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'officeCode';
+     /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+    //public $incrementing = true;  
+    
+    /**
+     * The "type" of the primary key ID.
+     *
+     * @var string
+     */
+    //protected $keyType = 'int';
+    protected $keyType = 'string';    
 }
