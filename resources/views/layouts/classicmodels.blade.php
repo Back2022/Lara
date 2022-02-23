@@ -14,23 +14,30 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
+        @if ($message = Session::get('success'))
+<div class="alert alert-success">
+<p>{{ $message }}</p>
+</div>
+@endif
+        
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
+                    {{-- $header --}}
                 </div>
             </header>
 
             <!-- Page Content -->
             <main>
                  @yield('content')
-                {{ $slot }}
+                {{-- $slot --}}
             </main>
         </div>
     </body>

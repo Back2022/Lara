@@ -3,14 +3,14 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
-//use Tests\TestCase;
-use \App\Models\Office;
-
+//use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use App\Models\Office;
+/*
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Support\Facades\Cache;
-
+*/
 class OfficeTest extends TestCase
 {
 
@@ -22,18 +22,25 @@ class OfficeTest extends TestCase
     public function test_example()
     {
         
-        //TODO ovo ne radi, test modela Office
+
        $this->assertTrue(true);
-        $office= Office::all();
-        /* $office->factory()->count(3)->make();
-        
+        //$office= Office::all();
+       /* $office->factory()->count(3)->make();
+         
         */
+       
+       // Kreiram 3 dummy ureda i provjeravam jesu li stavrno kreirana
+        $office= Office::factory()->count(3)->make();
+        $this->assertEquals(3, $office->count(), 'Broj ureda nije 3!');       
         
-        //Ovo dolje ne radi -> Error: Class "App\Models\Office" not found
-        //$office= Office::factory()->count(3)->make();
+        
+        // DOhvatim urede iz baze podataka i uvjerim se da ima zbilja određeni broj ureda
+        $brojUreda= Office::all()->count();
+        $this->assertGreaterThanOrEqual(7, $brojUreda, 'Broj ureda nije 7 ili veći!');
         
         //ne radi?
-       // $office=factory(Office::class,3)->make();
-        var_dump($office);
+        //n Laravel 8, the factory helper is no longer available
+       $office=factory(Office::class,3)->make();
+        //var_dump($office);
     }
 }

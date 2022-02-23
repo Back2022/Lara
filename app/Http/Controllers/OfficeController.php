@@ -16,8 +16,11 @@ class OfficeController extends Controller
     public function index()
     {
         return view('Office.index', [
-            'Offices' => Office::all()
+           // 'Offices' => Office::all()
+            'Offices' => Office::orderBy('officeCode', 'asc')->paginate(5)
         ]);
+       //         $data['companies'] = Company::orderBy('id', 'desc')->paginate(5);
+      //  return view('companies.index', $data);
     }
 
     /**
