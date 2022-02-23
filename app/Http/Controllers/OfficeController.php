@@ -30,7 +30,7 @@ class OfficeController extends Controller
      */
     public function create()
     {
-        //
+         return view('Office.create');
     }
 
     /**
@@ -41,7 +41,44 @@ class OfficeController extends Controller
      */
     public function store(StoreOfficeRequest $request)
     {
-        //
+        /*
+     "officeCode" => "1"
+    "city" => "San Francisco"
+    "phone" => "+1 650 219 4782"
+    "addressLine1" => "100 Market Street"
+    "addressLine2" => "Suite 300"
+    "state" => "CA"
+    "country" => "USA"
+    "postalCode" => "94080"
+    "territory" => "NA"
+    "created_at" => "2022-02-23 17:11:57"
+    "updated_at" => "2022-02-23 17:11:57"
+         */
+        
+        
+        $validatedData = $request->validateWithBag('post', [
+    'city' => ['required', 'max:50'],
+    'phone' => ['required', 'max:50'],
+    'addressLine1'=> ['required', 'max:50'],      
+    'country' => ['required', 'max:50'],        
+    'postalCode' => ['required', 'max:15'],  
+    'territory' => ['required', 'max:10'],         
+]);
+    $office = new Office();
+        $office->officeCode = $request->officeCode;
+        $office->city = $request->city;
+        $office->phone = $request->phone;
+        $office->addressLine1 = $request->addressLine1;
+        $office->addressLine2 = $request->addressLine2;
+        $office->state = $request->state;        
+        $office->country = $request->country;
+        $office->postalCode = $request->postalCode;
+        $office->territory = $request->territory;        
+        
+        $office->save();
+        return redirect()->route('Office.index')
+                        ->with('success', 'Office has been created successfully.');   
+        //dd($request);
     }
 
     /**
@@ -50,7 +87,7 @@ class OfficeController extends Controller
      * @param  \App\Models\Office  $office
      * @return \Illuminate\Http\Response
      */
-  //  public function show(Office $office) //nije proslo
+  //  public function show(Office $office) //nije proslo vjerojatno jer pimrarni ključ nije int i/ili nije imena id
    public function show($id)
     {
         return view('Office.show', [
