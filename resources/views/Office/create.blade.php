@@ -67,7 +67,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>officeCode:</strong>
-                    <input type="text" name="officeCode" class="form-control" placeholder="officeCode">
+                    <input type="text" name="officeCode" class="form-control" placeholder="officeCode" maxlength="10">
 @error('officeCode')        
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}        </div>
 @enderror    </div>
@@ -76,7 +76,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>city:</strong>
-                    <input type="text" name="city" class="form-control" placeholder="city">
+                    <input type="text" name="city" class="form-control" placeholder="city" maxlength="50" required="true">
 @error('city')        
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}        </div>
 @enderror    </div>
@@ -85,7 +85,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>phone:</strong>
-                    <input type="text" name="phone" class="form-control" placeholder="phone">
+                    <input type="text" name="phone" class="form-control" placeholder="phone" maxlength="50">
 @error('phone')        
                     <div class="alert alert-danger mt-1 mb-1">{{ $message }}        </div>
 @enderror    </div>

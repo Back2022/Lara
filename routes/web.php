@@ -17,6 +17,7 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::resource('employee', \App\Http\Controllers\employeeController::class);
 Route::resource('Office', \App\Http\Controllers\OfficeController::class);
 /// DB Primjer raw SQL ///
 
