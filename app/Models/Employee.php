@@ -40,4 +40,9 @@ class Employee extends Model
      */
     protected $keyType = 'int';  //po defaultu je int, pa ovo vjerojatno nije potrebno
     //protected $keyType = 'string';    
+    
+    public function office()
+    {
+        return $this->belongsTo(Office::class,'officeCode');
+    }
 }

@@ -29,4 +29,9 @@ class Office extends Model
      */
     //protected $keyType = 'int';
     protected $keyType = 'string';    
+    
+    public function employees()
+    {
+        return $this->hasMany(Employee::class,'officeCode');
+    }
 }

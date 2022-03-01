@@ -1,0 +1,90 @@
+ $president=Employee::findorfail(1002)->office()->first()->employees()->get();
+
+>>> $president=Employee::findorfail(1002)->office()->get();
+=> Illuminate\Database\Eloquent\Collection {#4510
+     all: [
+       App\Models\Office {#4517
+         officeCode: "1",
+         city: "San Francisco",
+         phone: "+1 650 219 4782",
+         addressLine1: "100 Market Street",
+         addressLine2: "Suite 300",
+         state: "CA",
+         country: "USA",
+         postalCode: "94080",
+         territory: "NA",
+         created_at: "2022-02-28 17:30:42",
+         updated_at: "2022-02-28 17:30:42",
+       },
+     ],
+   }
+>>> $president=Employee::findorfail(1002)->office()->get()->city;
+Exception with message 'Property [city] does not exist on this collection instance.'
+>>> $president=Employee::findorfail(1002)->office()->first()->city;
+=> "San Francisco"
+
+>>> $zapos=Office::findorfail(7)->employees()->get();
+[!] Aliasing 'Office' to 'App\Models\Office' for this Tinker session.
+=> Illuminate\Database\Eloquent\Collection {#4526
+     all: [
+       App\Models\Employee {#4527
+         employeeNumber: 1501,
+         lastName: "Bott",
+         firstName: "Larry",
+         extension: "x2311",
+         email: "lbott@classicmodelcars.com",
+         officeCode: "7",
+         reportsTo: 1102,
+         jobTitle: "Sales Rep",
+         created_at: null,
+         updated_at: null,
+       },
+       App\Models\Employee {#4530
+         employeeNumber: 1504,
+         lastName: "Jones",
+         firstName: "Barry",
+         extension: "x102",
+         email: "bjones@classicmodelcars.com",
+         officeCode: "7",
+         reportsTo: 1102,
+         jobTitle: "Sales Rep",
+         created_at: null,
+         updated_at: null,
+       },
+     ],
+   }
+
+
+>>> $c= Customer::select('customerNumber')->orderByDesc('customerNumber')->first();
+=> App\Models\Customer {#4526
+     customerNumber: 500,
+   }
+>>> $c= Customer::select('customerNumber')->orderByDesc('customerNumber')->first()->customerNumber;
+=> 500
+
+>>> $c= Customer::all();
+    App\Models\Customer {#4785
+         customerNumber: 500,
+         customerName: "test4",
+         contactLastName: "kjg",
+         contactFirstName: "kjkj",
+         phone: "jk",
+         addressLine1: "gkjg",
+         addressLine2: null,
+         city: "k",
+         state: null,
+         postalCode: null,
+         country: "",
+         salesRepEmployeeNumber: null,
+         creditLimit: null,
+         created_at: null,
+         updated_at: null,
+       },
+
+
+ $c= Employee::select('employeeNumber')->orderByDesc('employeeNumber')->first()->employeeNumber;
+
+
+//random office code
+>>> $randOfficeId=Office::select("*")->inRandomOrder()->first()->officeCode;
+=> "6"

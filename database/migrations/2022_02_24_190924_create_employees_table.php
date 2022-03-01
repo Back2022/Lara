@@ -14,8 +14,22 @@ return new class extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->id();
+		//$table->integer('employeeNumber');
+                $table->increments('employeeNumber'); //INT(10) PK, AN 
+                $table->string('lastName',50);
+		$table->string('firstName',50);
+		$table->string('extension',10);
+		$table->string('email',100);
+		$table->string('officeCode',10);
+		$table->integer('reportsTo')->unsigned()->nullable(); //INT(10) UINT ->default('NULL');
+		$table->string('jobTitle',50);
+		//$table->primary('employeeNumber');  //već je rjeseno sa INCREMENTS
             $table->timestamps();
+            
+                                  // FK                 //PK      //Table
+               // $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('reportsTo')->references('employeeNumber')->on('employees');
+            $table->foreign('officeCode')->references('officeCode')->on('offices');
         });
     }
 
