@@ -1,7 +1,7 @@
 <!-- Stored in resources/views/child.blade.php -->
 
 @extends('layouts.classicmodels')
-
+<!-- //TODO Employee view threba prilagoditi sa OFFICE modela !!! -->
 
 @section('title', 'Page Title')
 @section('sidebar')@@parent

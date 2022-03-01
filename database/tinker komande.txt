@@ -1,4 +1,36 @@
- $president=Employee::findorfail(1002)->office()->first()->employees()->get();
+
+// DOhvati zadnja tri rekorda i obrisi ih bez koristenja petlje
+// bitno je da ostanemo u eloquent builderu i ne dohvatimo collection   !!!!
+// https://laravel.com/docs/9.x/eloquent
+//https://laravel.com/docs/9.x/collections
+
+>>> $radnici = Employee::where('employeeNumber','!=', 0)->orderByDesc('employeeNumber')->limit(3);
+=> Illuminate\Database\Eloquent\Builder {#4592}
+>>> $radnici = Employee::where('employeeNumber','!=', 0)->orderByDesc('employeeNumber')->limit(3)->delete();
+=> 3
+
+
+// DOhvati zadnja tri zaposlenika
+$radnici = Employee::orderBy('employeeNumber', 'desc')->take(3)->get();
+ili:
+$radnici = Employee::all()->take(-3);
+
+
+
+
+// Kreiraj 3 zaposlenika i sačuvaj ih u bazi podataka
+// Na kraju svakog reda pritisnuti ctrl-enter inače će se izvrsiti samo jedan red
+
+>>> $radnici = Employee::factory()->count(3)->make()->
+... each(function ($r) {
+... $r->save();
+... });
+
+ 
+
+
+
+$president=Employee::findorfail(1002)->office()->first()->employees()->get();
 
 >>> $president=Employee::findorfail(1002)->office()->get();
 => Illuminate\Database\Eloquent\Collection {#4510

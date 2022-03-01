@@ -50,7 +50,7 @@ class OfficeController extends Controller {
           "updated_at" => "2022-02-23 17:11:57"
          */
 
-//TODO pogledaj kako dobiti greske pomocu messagebag
+
         $validatedData = $request->validateWithBag('post', [
             //    $validatedData = $request->validate([            
             'city' => ['required', 'max:50'],

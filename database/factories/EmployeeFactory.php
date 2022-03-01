@@ -17,15 +17,18 @@ class EmployeeFactory extends Factory
      */
     public function definition()
     {
+        // dohvati zadnju vrijednost employeeNumber iz baze
        $last_id= Employee::select('employeeNumber')->orderByDesc('employeeNumber')->first()->employeeNumber;
+       $sef=Employee::select('reportsTo')->inRandomOrder()->first()->reportsTo;
+       //$sef=Employee::select('reportsTo')->first()->reportsTo;  //proba radi li factory ako u tablicu nije unesen niti jedan employee
         return [
-           "employeeNumber" => $this->faker->unique()->numberBetween($last_id+1, 9999), //TODO buduci da se ne spremaju u bazi, pamti koji je zadnji kreiran
+       //    "employeeNumber" => $this->faker->unique()->numberBetween($last_id+1, 9999), // Buduci da je polje PK, AI baza ce se samo pobrinuti za dodjelu novog kljuca
 		"lastName" => $this->faker->lastName(),
 		"firstName" => $this->faker->firstNameFemale(),
 		"extension" => 'x'.$this->faker->numberBetween(1000, 9999),
 		"email"     => $this->faker->email(),
 		"officeCode" => Office::select("*")->inRandomOrder()->first()->officeCode, //"1",
-		"reportsTo" => NULL,
+		"reportsTo" => $sef,
 		"jobTitle" => $this->faker->randomElement(["VP Sales"
                     ,"VP Marketing"
                     ,"Sales Manager (APAC)"
