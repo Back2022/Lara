@@ -1,20 +1,20 @@
 <?php
 
 namespace Tests\Unit;
-
+//use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 //use PHPUnit\Framework\TestCase;  // javlja ovu gresku: Error: Call to a member function connection() on null
 use App\Models\Employee;
 
 class EmployeeTest extends TestCase {
-
+  // use RefreshDatabase;  //nakon testa brise tablice, migrira ih i seeda ispocetka?
     /**
      * A basic unit test example.
      *
      * @return void
      */
     public function test_kreiraj_tri_employee() {
-
+    
         // Kreiraj 3 zaposlenika i sačuvaj ih u bazi podataka
         // Na kraju svakog reda pritisnuti ctrl-enter inače će se izvrsiti samo jedan red
 

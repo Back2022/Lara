@@ -45,4 +45,10 @@ class Employee extends Model
     {
         return $this->belongsTo(Office::class,'officeCode');
     }
+    public function customers()
+    {
+        //TODO ne radi DB:seed zbog ovoga, provjeri relacije
+                                            //key iz tablice Customer  // Key iz Employee
+        return $this->hasMany(Customer::class,'salesRepEmployeeNumber','employeeNumber');
+    }
 }

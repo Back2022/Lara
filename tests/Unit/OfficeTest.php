@@ -1,8 +1,10 @@
 <?php
 //$ php artisan make:test OfficeTest --unit
-
+// ukoliko pokrnemo testiranje s
+// php artisan test
+// sve tablice iz laravela se brisu
 namespace Tests\Unit;
-
+use Illuminate\Foundation\Testing\RefreshDatabase;
 //use PHPUnit\Framework\TestCase;
 use Tests\TestCase;
 use App\Models\Office;
@@ -13,6 +15,7 @@ use Illuminate\Support\Facades\Cache;
 */
 class OfficeTest extends TestCase
 {
+    //use RefreshDatabase;
 
     /**
      * A basic unit test example.
@@ -40,7 +43,7 @@ class OfficeTest extends TestCase
         
         //ne radi?
         //n Laravel 8, the factory helper is no longer available
-       $office=factory(Office::class,3)->make();
+        // $office=factory(Office::class,3)->make();
         //var_dump($office);
     }
 }

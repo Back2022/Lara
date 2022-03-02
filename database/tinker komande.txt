@@ -1,3 +1,7 @@
+// brisanje i migracija + seed u jednom koraku:
+ php artisan migrate:refresh --seed
+
+
 
 // DOhvati zadnja tri rekorda i obrisi ih bez koristenja petlje
 // bitno je da ostanemo u eloquent builderu i ne dohvatimo collection   !!!!
