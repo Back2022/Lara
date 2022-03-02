@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Customer extends Model
 {
     use HasFactory;
+    
+    protected $primaryKey = 'customerNumber';
+
+
+    public function zastupnik()
+    {
+       
+        return $this->belongsTo(Employee::class,'salesRepEmployeeNumber','employeeNumber');
+    }
 }
