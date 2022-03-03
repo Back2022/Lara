@@ -45,9 +45,12 @@ class EmployeeController extends Controller
      * @param  \App\Models\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(Employee $employee)
+    public function show(int $employeeNumber)
     {
-        //
+               return view('employee.show', [
+            'emp' => Employee::findOrFail($employeeNumber)
+                //  'office' =>$office  //nije proslo
+        ]);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,6 +20,17 @@ class Employee extends Model {
 
     use HasFactory;
 
+    
+
+    /**
+ * Get the user's full name.
+ *
+ * @return string
+ */
+public function getFullNameAttribute()
+{
+    return $this->attributes['firstName']." ".$this->attributes['lastName'];
+}
     /**
      * The primary key associated with the table.
      *

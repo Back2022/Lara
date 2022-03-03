@@ -1,6 +1,6 @@
 <!-- Stored in resources/views/child.blade.php -->
  <!-- //TODO Employee view threba prilagoditi sa OFFICE modela !!! -->
-@extends('layouts.classic_models')
+@extends('layouts.classicmodels')
  
 @section('title', 'Show')
  
@@ -16,21 +16,36 @@
      <span class="menu-text"> Vrati me na listu ureda </span>
 </a>
     
-    <p>Office detalji</p>
+    <p>Zaposlenik detalji</p>
 
 <dl>
-    <dt>Kod</dt>
-    <dd>{{$office->officeCode}}</dd>
-
-    <dt>City</dt>
-    <dd>{{$office->city}}</dd>
-
-    <dt>Adresa</dt>
-    <dd>{{$office->addressLine1}}</dd>
+    <dt>Last Name</dt>
+    <dd>{{$emp->lastName}}</dd>
+    <dt>First Name</dt>
+    <dd>{{$emp->firstName}}</dd>
+        <dt>email</dt>
+    <dd>{{$emp->email}}</dd>
+        <dt>jobTitle</dt>
+    <dd>{{$emp->jobTitle}}</dd>
 </dl>
     <hr>
     
 
     
-    {{ dd($office)}}
+
 @endsection
+<!-- 
+ App\Models\Employee {#4538
+         employeeNumber: 1504,
+         lastName: "Jones",
+         firstName: "Barry",
+         extension: "x102",
+         email: "bjones(at)classicmodelcars.com",
+         officeCode: "7",
+         reportsTo: 1102,
+         jobTitle: "Sales Rep",
+         created_at: null,
+         updated_at: null,
+       },
+
+-->

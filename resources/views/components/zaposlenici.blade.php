@@ -1,3 +1,8 @@
 <div>
-    <!-- It is not the man who has too little, but the man who craves more, that is poor. - Seneca -->
+    <label for="dropzap">Zaposlenici: </label>
+    <select name="dropzap" onchange="window.location = 'employee/'+this.options[this.selectedIndex].value">
+        @foreach($zaposlenici as $z)    
+        <option value="{{$z->employeeNumber}}">{{$z->getFullNameAttribute()}}</option>
+@endforeach
+    </select> 
 </div>
