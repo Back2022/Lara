@@ -28,6 +28,10 @@
     <dt>Adresa</dt>
     <dd>{{$office->addressLine1}}</dd>
 </dl>
+<x-zaposlenici :officeId="$office->officeCode"/>
+Zaposlenici iz ureda broj 4
+<x-zaposlenici officeId="4"/>
+    <!-- comment -->  
     <hr>
     
 
