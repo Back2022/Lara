@@ -9,6 +9,8 @@
 <p>This is appended to the master sidebar.</p>
 <p>The current UNIX timestamp is {{ time() }}.</p>
 <p>Danasnji datum uz pomoć Carbon clase: {{ Carbon\Carbon::now() }}.{{1 + 1}}</p>
+@include('user.status', ['status' => 'complete'])
+
 @endsection
 @section('content')    <p>This is my body content.</p>
 

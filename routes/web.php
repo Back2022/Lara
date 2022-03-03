@@ -173,4 +173,4 @@ Route::get('/ispod', function () {
 // primjer rute za closure funkciju koja vraća neki string
 Route::get('/greeting', function () {
     return 'Hello World';
-});
+})->name('greeting');
