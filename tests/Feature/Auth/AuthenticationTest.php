@@ -16,6 +16,10 @@ class AuthenticationTest extends TestCase
         $response = $this->get('/login');
 
         $response->assertStatus(200);
+        
+        $response = $this->get('/login1');
+
+        $response->assertStatus(404);
     }
 
     public function test_users_can_authenticate_using_the_login_screen()
@@ -27,8 +31,9 @@ class AuthenticationTest extends TestCase
             'password' => 'password',
         ]);
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(RouteServiceProvider::HOME);
+        $this->assertAuthenticated();  //https://laravel.com/docs/9.x/http-tests#assert-authenticated
+        $response->assertRedirect(RouteServiceProvider::HOME);  //prvi nacin preko app/Providers/RouteServiceProvider
+        $response->assertRedirect(route('dashboard'));  //"rucni"nacin preko imenovene rute routes/web
     }
 
     public function test_users_can_not_authenticate_with_invalid_password()
@@ -39,7 +44,7 @@ class AuthenticationTest extends TestCase
             'email' => $user->email,
             'password' => 'wrong-password',
         ]);
-
+    //$this->assertAuthenticated();  // ne smije proci jer nije dobar password
         $this->assertGuest();
     }
 }

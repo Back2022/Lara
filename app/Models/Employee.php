@@ -19,17 +19,49 @@ use Illuminate\Database\Eloquent\Model;
 class Employee extends Model {
 
     use HasFactory;
+    /**
+     * The accessors to append to the model's array form.
+     *
+     * @var array
+     */
+    protected $appends = ['fullNameAttribute'];  // Ovo mora zbog fullNameAttribute(): Attribute
 
-    
+     /**
+     * Get the user's first name. dohvaća atribut firstName (isto polje u bazi firstName)
+     *
+     * @return \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function firstName(): Attribute
+    {
+       // return Attribute::make(  //ovo ne radi
+       return new Attribute( 
+            get: fn ($value) => "My name is ".ucfirst($value),  //Mutator
+        );
+    }   
 
     /**
  * Get the user's full name.
  *
+ * @link https://laravel.com/docs/9.x/eloquent-serialization#appending-values-to-json 
+ * @example $o=Office::find(7)->employees()->get()->first()->fullNameAttribute description
+ * @return string
+ */
+protected function fullNameAttribute(): Attribute
+{
+    // mora se definirati protected $appends 
+        return new Attribute(
+        get: fn () => $this->attributes['firstName']." ".$this->attributes['lastName']
+        );
+}
+/**
+ * @example $o=Office::find(7)->employees()->get()->first()->getFullNameAttribute()
  * @return string
  */
 public function getFullNameAttribute()
 {
-    return $this->attributes['firstName']." ".$this->attributes['lastName'];
+    // Stari način
+    // $o=Office::find(7)->employees()->get()->first()->getFullNameAttribute()
+   return $this->attributes['firstName']." ".$this->attributes['lastName'];
 }
     /**
      * The primary key associated with the table.

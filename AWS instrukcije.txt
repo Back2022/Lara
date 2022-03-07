@@ -1,0 +1,18 @@
+Korisnik@CR13-02 MINGW64 ~/Code/Lara (main)
+$ chmod 400 "C:\Users\Korisnik\Downloads\amazonlara2022.pem"
+
+
+Korisnik@CR13-02 MINGW64 ~/Code/Lara (main)
+$ ssh -i "C:\Users\Korisnik\Downloads\amazonlara2022.pem" ubuntu@ec2-18-207-197-115.compute-1.amazonaws.com
+
+
+webmin:
+https://18.212.32.81:10000/session_login.cgi
+u:webmin
+p:lara2022
+
+( prije toga dodali no-root user sa mogucnosti sudo
+sudo adduser webmin
+sudo adduser webmin sudo
+)
+
