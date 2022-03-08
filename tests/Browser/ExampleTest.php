@@ -17,7 +17,10 @@ class ExampleTest extends DuskTestCase
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
-                    ->assertSee('Laravel');
+                    ->assertSee('Laracasts offers thousands')
+                    ->assertDontSee('Laracasts XXXX thousands')
+                    ->click('#linkovi > li:nth-child(1) > a')
+                    ->assertUrlIs('https://www.google.com/');
         });
     }
 }
