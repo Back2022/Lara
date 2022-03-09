@@ -1,12 +1,13 @@
 <?php
 
 namespace App\Models;
-
+use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Office extends Model
 {
+    use HasTrixRichText;
     use HasFactory; // Ovo omogućuje korištenje static metode Office::factory()->count(3)->make();
     /**
      * The primary key associated with the table.

@@ -63,7 +63,9 @@
 
 
     <form action="{{ route('Office.store') }}        " method="POST" enctype="multipart/form-data">
-@csrf    <div class="row">
+@csrf   
+        @trix(\App\Models\Office::class, 'addressLine1')
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>officeCode:</strong>
