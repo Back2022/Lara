@@ -1,0 +1,17 @@
+C:\Users\Korisnik\Code\Lara>ftp
+ftp> open 18.212.32.81
+Connected to 18.212.32.81.
+220 ProFTPD Server (Debian) [::ffff:172.31.85.176]
+200 UTF8 set to on
+User (18.212.32.81:(none)): webmin
+331 Password required for webmin
+Password:lara2022
+230 User webmin logged in
+ftp> dir
+200 PORT command successful
+150 Opening ASCII mode data connection for file list
+-rw-r--r--   1 root     root        10918 Mar  5 13:41 index.html
+-rw-r--r--   1 root     root           17 Mar  9 19:57 phpinfo.php
+226 Transfer complete
+ftp: 138 bytes received in 0.01Seconds 13.80Kbytes/sec.
+ftp>

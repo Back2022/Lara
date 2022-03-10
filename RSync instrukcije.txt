@@ -1,0 +1,6 @@
+Korisnik@CR13-02 MINGW64 ~/temp
+$ pwd
+/c/Users/Korisnik/temp
+
+rsync -avz -e "ssh -i /c/Users/Korisnik/Downloads/amazonlara2022.pem" --progress ./dir1 ubuntu@18.212.32.81:/var/www/html
+

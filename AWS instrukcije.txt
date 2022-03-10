@@ -1,3 +1,5 @@
+ssh -i "/c/Users/Korisnik/Downloads/amazonlara2022.pem" ubuntu@ec2-18-212-32-81.compute-1.amazonaws.com
+
 KAko dumpati podatke:
 //NE radi u bash, ,ora se u CMD!
 mysqldump -u admin -p lara2022 > lara2022.sql
