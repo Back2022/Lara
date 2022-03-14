@@ -19,11 +19,10 @@ class RegistrationTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_new_users_can_register()
-    
-    $this->markTestSkipped( 'PHPUnit will skip this test method' );
-    
-    {
+    public function test_new_users_can_register(){
+        
+        $this->markTestSkipped( 'PHPUnit will skip this test method' );
+        
         $response = $this->post('/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
