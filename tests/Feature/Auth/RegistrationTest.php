@@ -12,6 +12,8 @@ class RegistrationTest extends TestCase
 
     public function test_registration_screen_can_be_rendered()
     {
+        $this->markTestSkipped( 'PHPUnit will skip this test method' );
+        
         $response = $this->get('/register');
 
         $response->assertStatus(200);
