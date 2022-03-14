@@ -14,6 +14,8 @@ class GuzzleTest extends TestCase {
      * @return void
      */
     public function testDohvatiStranicuIspodUzPomocGuzzle() {
+        $this->markTestSkipped( 'PHPUnit will skip this test method' );
+        
         $client = new \GuzzleHttp\Client();
         $res = $client->request('GET', 'http://localhost:8000/ispod', [
             'auth' => ['user', 'pass']
@@ -24,6 +26,8 @@ class GuzzleTest extends TestCase {
         
     }
         public function testDohvatiStranicuGreeting() {
+            $this->markTestSkipped( 'PHPUnit will skip this test method' );
+            
         $client = new \GuzzleHttp\Client();
         $res = $client->request('GET', 'http://localhost:8000/greeting?pozdrav=hello',['query'=>['foo'=>'bar']]);
         $this->assertEquals('200', $res->getStatusCode());
@@ -35,6 +39,9 @@ class GuzzleTest extends TestCase {
         
     }       
     public function testDohvatiStranicuGetPostUzPomocPOST() {
+        
+        $this->markTestSkipped( 'PHPUnit will skip this test method' );
+        
         $client = new \GuzzleHttp\Client();
         $res = $client->request('POST', 'http://localhost:8000/getpost');
         $this->assertEquals('200', $res->getStatusCode());
