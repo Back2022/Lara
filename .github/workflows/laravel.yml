@@ -32,4 +32,5 @@ jobs:
         DB_DATABASE: lara2022
         DB_USERNAME: admin
         DB_PASSWORD: password
-      run: vendor/bin/phpunit
+#      run: vendor/bin/phpunit
+      run: php artisan test
