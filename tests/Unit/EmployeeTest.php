@@ -10,7 +10,7 @@ class EmployeeTest extends TestCase {
   // use RefreshDatabase;  //nakon testa brise tablice, migrira ih i seeda ispocetka?
     /**
      * A basic unit test example.
-     *
+     * @covers App\Models\Employee
      * @return void
      */
     public function test_kreiraj_tri_employee() {

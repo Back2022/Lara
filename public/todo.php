@@ -9,6 +9,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHPWebPage.php to 
         <title></title>
     </head>
     <body>
+        <h2>Test ftp</h2>
+        <hr>
         <h1>    UPDAJTAJ NODE SA ubuntu@ip-172-31-85-176:/var/www/lara$ node -v
 v10.19.0
 
