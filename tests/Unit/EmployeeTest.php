@@ -17,7 +17,7 @@ class EmployeeTest extends TestCase {
     
         // Kreiraj 3 zaposlenika i sačuvaj ih u bazi podataka
         // Na kraju svakog reda pritisnuti ctrl-enter inače će se izvrsiti samo jedan red
-
+ 
         $pocetni_broj_zaposlenika = Employee::all()->count();
         Employee::factory()->count(3)->make()->each(function ($r) {
             $r->save();
